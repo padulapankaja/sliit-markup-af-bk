@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 let Course = new Schema({
-    tiite: {
+    title: {
         type: String
     },
     img: {
@@ -24,8 +24,13 @@ let Course = new Schema({
         type: Schema.ObjectId,
         ref: 'teachers',
 
-    }
-});
+    },
+
+},
+{
+    timestamps: true,
+  }
+  );
 
 
 module.exports = mongoose.model('course', Course);

@@ -19,7 +19,7 @@ exports.create_course = async (req, res) => {
 
     try {
         const new_course = {
-            tiite: req.body.tiite,
+            title: req.body.title,
             img: req.body.img,
             description: req.body.description,
             link: req.body.link,
@@ -61,8 +61,8 @@ exports.get_single_course = async (req, res) => {
 exports.get_courses_by_teacher = async (req, res) => {
 
     try {
-        console.log(req.params.id );
-        const result = await CourseModel.findOne({ teacher_id: req.params.id })
+        console.log(req.params.id);
+        const result = await CourseModel.find({ teacher_id: req.params.id })
         if (result == null) {
             return res.status(HTTP_RESPONSE.NOT_FOUND).json(format_response(error, false, "Not found"));
         }
