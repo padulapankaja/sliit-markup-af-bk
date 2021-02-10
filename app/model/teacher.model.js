@@ -1,10 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-let User = new Schema({
-    fname: {
-        type: String
-    },
-    lname: {
+let Teacher = new Schema({
+    name: {
         type: String
     },
     email: {
@@ -13,11 +10,15 @@ let User = new Schema({
     password: {
         type: String
     },
+    courses:{
+        type: Schema.ObjectId,
+        ref: 'course'
+    },
     role:{
         type:String,
-        default:"student"
+        default:"teacher"
     }
 });
 
 
-module.exports = mongoose.model('Users', User);
+module.exports = mongoose.model('Teachers', Teacher);
