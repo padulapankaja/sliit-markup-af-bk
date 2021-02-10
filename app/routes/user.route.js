@@ -42,7 +42,7 @@ router.post('/singin/teacher', userController.validate("LOGIN_USER"), userContro
 *  @route_name : /api/users/add/course
 
 */
-router.post('/add/course', userController.validate("ADD_COURSE"), userController.add_course_to_list);
+router.post('/add/course', checkAuth, userController.validate("ADD_COURSE"), userController.add_course_to_list);
 /*
 *  GET
 *  get my courses
