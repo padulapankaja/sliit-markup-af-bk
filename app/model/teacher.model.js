@@ -10,13 +10,9 @@ let Teacher = new Schema({
     password: {
         type: String
     },
-    courses:{
-        type: Schema.ObjectId,
-        ref: 'course'
-    },
     role:{
         type:String,
-        default:"teacher"
+        default:"student"
     }
 });
 

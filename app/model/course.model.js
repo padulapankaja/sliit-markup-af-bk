@@ -19,6 +19,11 @@ let Course = new Schema({
     noOfStudents: {
         type: Number,
         default: 0
+    },
+    teacher_id: {
+        type: Schema.ObjectId,
+        ref: 'teachers',
+
     }
 });
 

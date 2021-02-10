@@ -12,6 +12,7 @@ const MongoClient = require("mongodb").MongoClient;
 //===================================import routes    =================================================
 
 const userRoutes = require("./app/routes/user.route");
+const courseRoutes = require("./app/routes/course.route");
 
 
 // import db
@@ -27,6 +28,7 @@ mongoose.set("useCreateIndex", true);
 //=================================== defines routes     ===============================================
 //user routes
 app.use("/api/user", userRoutes);
+app.use("/api/course", courseRoutes);
 //================================== Handlle Error     ===========================================
 
 app.use((req, res, next) => {
