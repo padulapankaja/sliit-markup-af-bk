@@ -27,10 +27,10 @@ let Course = new Schema({
     },
 
 },
-{
-    timestamps: true,
-  }
-  );
+    {
+        timestamps: true,
+    }
+);
 
 
 module.exports = mongoose.model('course', Course);

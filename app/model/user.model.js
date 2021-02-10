@@ -13,10 +13,16 @@ let User = new Schema({
     password: {
         type: String
     },
-    role:{
-        type:String,
-        default:"student"
-    }
+    role: {
+        type: String,
+        default: "student"
+    },
+    courses: [{
+        courseId: {
+            type: Schema.ObjectId,
+            ref: 'courses',
+        }
+    }]
 });
 
 
